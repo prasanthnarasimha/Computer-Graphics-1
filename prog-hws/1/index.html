@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Computer Graphics Assignment 1</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+  <div class="page-header">
+    <h1>Programming Assignment 1</h1>
+    <p class="pull-right">
+      <strong>Narasimha_Reddy@student.uml.edu</strong>
+    </p>
+  </div>
+  <form class="form-inline">
+    <div class="form-group">
+      <label class="radio-inline light-panel" onclick="shapeClicked('line')">
+        <input id="inlineradio1" name="sampleinlineradio" value="option1" type="radio" checked="checked"> Line
+      </label>
+      <label class="radio-inline" onclick="shapeClicked('circle')">
+        <input id="inlineradio2" name="sampleinlineradio" value="option2" type="radio"> Circle
+      </label>
+      <label class="radio-inline" onclick="shapeClicked('ellipse')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio"> Ellipse
+      </label>
+      <label class="radio-inline" onclick="shapeClicked('rectangle')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio"> Rectangle
+      </label>
+      <label class="radio-inline" onclick="shapeClicked('polygon')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio"> Polygon
+      </label>
+      <label class="radio-inline" onclick="shapeClicked('polyline')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio"> Polylines
+      </label>
+
+    </div>
+    <!--form-group-->
+  </form>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <label class="radio-inline light-panel" onclick="colorChanged('red')">
+        <input id="inlineradio1" name="sampleinlineradio" value="option1" type="radio"> Red
+      </label>
+      <label class="radio-inline" onclick="colorChanged('blue')">
+        <input id="inlineradio2" name="sampleinlineradio" value="option2" type="radio"> Blue
+      </label>
+      <label class="radio-inline" onclick="colorChanged('green')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio"> Green
+      </label>
+      <label class="radio-inline" onclick="colorChanged('black')">
+        <input id="inlineradio3" name="sampleinlineradio" value="option3" type="radio" checked = "checked"> Black
+      </label>
+    </div>
+    <!--form-group-->
+  </form>
+
+  <div class="container">
+    <button class="btn-xs" onclick="clear()">Clear Canvas Area</button>
+  </div>
+  
+  <div id="box1" style="display: none;">
+   
+        <label>No of sides:</label><input id="nsides" type="text" placeholder="5">
+      
+      <p >Enter the number of sides here and Click Somewhere on the Canvas area to Generate Polygon</p>
+
+  </div> 
+
+  <!-- <div id="rect" style="display: none;">
+    <label>Width:</label><input id="width" type="text">
+    <label>Height:</label><input id="height" type="text">
+    <p>Click anywhere on the canvas area to generate Rectangle</p>
+
+  </div> -->
+
+  <h5>
+    <strong>Canvas Area</strong>
+  </h5>
+  <canvas id="myCanvas" style="border:2px solid rgb(204, 204, 204)"></canvas>
+
+</div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
