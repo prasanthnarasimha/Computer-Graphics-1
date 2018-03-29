@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>CG1 Programming Assignment 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+                body {
+                        margin: 0px;
+                        background-color: beige;
+                        overflow: scroll;
+                }
+        </style>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+        <div class="container-fluid navbar">
+                <h2>Final Project - Week 1</h2>
+                <label for="colorWell">Change Background Color:</label>
+                <input type="color" value="#f5f5dc" id="colorWell">
+                <div class="pull-right">
+                        <h4>-Narasimha Prasanth Chintarlapalli Reddy</h4>
+                        <h4>-Narasimha_Reddy@student.uml.edu</h4>
+                        <h4>- 01669930</h4>
+                </div>
+                <!-- <select>
+            <option value="house">House</option>
+            <option value="other">Other</option>
+        </select> -->
+        </div>
+
+        <div class="container"></div>
+        <div class="col-md-12">
+
+                <div class="row">
+
+
+                        <div class="col-md-6" style="width:50%;border: 1px solid;">
+                                <div id="divfrontsvg" style="overflow:hidden">
+                                        <style>
+                                                h4 {
+                                                        text-shadow: 1px 1px #FF0000;
+                                                }
+                                        </style>
+                                        <h4 style="color:black;">Front View</h4>
+
+
+                                        <svg id="front" width="700" height="500">
+
+
+                                                Chimney
+                                                <rect x="375" y="50" width="50" height="125" style="fill:blue;stroke:black;stroke-width:2;opacity:5" /> Roof
+                                                <rect x="95" y="245" width="180" height="180" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" transform="rotate(-45 100 100)"
+                                                /> House block
+                                                <rect x="200" y="200" width="250" height="800" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Right window
+                                                <rect x="375" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                <line x1="375" y1="250" x2="425" y2="250" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                <line x1="400" y1="225" x2="400" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" /> Left window
+                                                <rect x="225" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                <line x1="225" y1="250" x2="275" y2="250" style="stroke:black;stroke-width:3; opacity:0.5" />
+                                                <line x1="250" y1="225" x2="250" y2="275" style="stroke:black;stroke-width:3 ;opacity:0.5" /> Attic window
+                                                <circle cx="325" cy="150" r="20" fill="grey" style="stroke:black; stroke-width: 2 ;opacity:5" /> Door
+
+                                                <rect x="300" y="400" width="50" height="100" style="fill:green;stroke:black;stroke-width:2;opacity:5" /> Door knob
+                                                <circle cx="340" cy="450" r="5" fill="purple" stroke="black" stroke-width="1" />
+
+                                        </svg>
+
+
+                                </div>
+
+                                <div id="divfronttrans">
+                                        <h3 style="color:#76671d;">Transformations</h3>
+                                        <div class="row">
+                                                <text style="float:left">Translate :
+                                                        <input type="range" id="trans" min="100" max="400" value="100"
+                                                                onchange="functrans(this.value, 'ftrans', 'front')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="ftrans" type="text" name="fname" value="100" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+                                        </div>
+
+                                        <div class="row">
+                                                <text style="float:left">Rotate :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcrot(this.value, 'frot', 'front')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="frot" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+                                        <div class="row">
+                                                <text style="float:left">Scale :
+                                                        <input type="range" id="trans" min="1" max="2" step='0.05' value="1"
+                                                                onchange="funcscale(this.value, 'fscale', 'front')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="fscale" type="text" name="fname" value="1" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                                <text style="float:left">Shear :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcshear(this.value, 'fskew', 'front')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="fskew" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+
+                                        </div>
+
+                                </div>
+                        </div>
+
+                        <div class="col-md-6" style="width:50%;border: 1px solid;">
+                                <div id="divsidesvg" style="overflow:hidden">
+                                        <h4 style="color:black;">Side View</h4>
+                                        <svg id="side" width="700" height="500">
+
+
+                                                House block
+                                                <rect x="150" y="200" width="400" height="800" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Roof
+                                                <rect x="150" y="75" width="400" height="125" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Chimney
+                                                <rect x="400" y="50" width="50" height="125" style="fill:blue;stroke:black;stroke-width:2;opacity:1" /> Right-top window
+                                                <rect x="400" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                <line x1="400" y1="250" x2="450" y2="250" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                <line x1="425" y1="225" x2="425" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" /> Right-bottom window
+                                                <rect x="400" y="350" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                <line x1="400" y1="375" x2="450" y2="375" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                <line x1="425" y1="350" x2="425" y2="400" style="stroke:black;stroke-width:3; opacity:0.5" /> Left window
+                                                <rect x="250" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                <line x1="250" y1="250" x2="300" y2="250" style="stroke:black;stroke-width:3; opacity:0.5" />
+                                                <line x1="275" y1="225" x2="275" y2="275" style="stroke:black;stroke-width:3 ;opacity:0.5" />
+
+
+                                        </svg>
+                                </div>
+
+                                <div id="divsidetrans">
+                                        <h3 style="color:#76671d;">Transformations</h3>
+                                        <div class="row">
+                                                <text style="float:left">Translate :
+                                                        <input type="range" id="trans" min="100" max="400" value="100"
+                                                                onchange="functrans(this.value, 'strans', 'side')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="strans" type="text" name="fname" value="100" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+                                        </div>
+
+                                        <div class="row">
+                                                <text style="float:left">Rotate :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcrot(this.value, 'srot', 'side')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="srot" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+                                        <div class="row">
+                                                <text style="float:left">Scale :
+                                                        <input type="range" id="trans" min="1" max="2" step='0.05' value="1"
+                                                                onchange="funcscale(this.value, 'sscale', 'side')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="sscale" type="text" name="fname" value="1" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                                <text style="float:left">Shear :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcshear(this.value, 'sskew', 'side')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="sskew" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+
+                                        </div>
+
+                                </div>
+                        </div>
+
+                </div>
+
+                <div class="row">
+
+
+                        <div class="col-md-6" style="width:50%;border: 1px solid;">
+                                <div id="divtopsvg" style="overflow:hidden">
+                                        <h4 style="color:black;">Top View</h4>
+
+                                        <svg id="top" width="700" height="500">
+
+
+
+                                                Roof
+                                                <rect x="200" y="100" width="250" height="870" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" />
+
+                                                <line x1="325" y1="100" x2="325" y2="500" style="stroke:black;stroke-width:3; opacity:0.5" /> Chimney
+
+                                                <rect x="375" y="150" width="50" height="50" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                        </svg>
+
+
+
+
+                                </div>
+
+                                <div id="divtoptrans">
+                                        <h3 style="color:#76671d;">Transformations</h3>
+                                        <div class="row">
+                                                <text style="float:left">Translate :
+                                                        <input type="range" id="trans" min="100" max="400" value="100"
+                                                                onchange="functrans(this.value, 'ttrans', 'top')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="ttrans" type="text" name="fname" value="100" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+                                        </div>
+
+                                        <div class="row">
+                                                <text style="float:left">Rotate :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcrot(this.value, 'trot', 'top')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="trot" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+                                        <div class="row">
+                                                <text style="float:left">Scale :
+                                                        <input type="range" id="trans" min="1" max="2" step='0.05' value="1"
+                                                                onchange="funcscale(this.value, 'tscale', 'top')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="tscale" type="text" name="fname" value="1" disabled>
+                                                </text>
+                                                <br>
+                                                <br>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                                <text style="float:left">Shear :
+                                                        <input type="range" id="trans" min="0" max="360" value="0" onchange="funcshear(this.value, 'tskew', 'top')">
+                                                </text>
+                                                <text style="float:right">Value :
+                                                        <input id="tskew" type="text" name="fname" value="0 deg" disabled>
+                                                </text>
+                                                <br>
+
+                                        </div>
+
+                                </div>
+                        </div>
+
+                        <div class="col-md-6" style="width:50%;border: 1px solid;">
+                                <div id="divsidesvg" style="overflow:hidden">
+                                        <h4 style="color:black;">Isometric View</h4>
+                                        <svg id="iso" width="700" height="500">
+
+                                                <path d="M300 500 L150 400 L150 200 L300 300 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                <path d="M300 500 L550 400 L550 200 L300 300 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <path d="M300 300 L150 200 L250 150 L500 50 L550 200 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <line x1="250" y1="150" x2="300" y2="300" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <path d="M250 466.66 L200 433.33 L200 366.66 L250 400 Z" style="fill:green;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <ellipse cx="315" cy="-10" rx="30" ry="20" fill="grey" style="stroke:black; stroke-width: 2 ;opacity:5" transform=" rotate(45)"
+                                                />
+
+                                                <path d="M200 290 L170 270 L170 240 L200 260 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                <path d="M250 290 L280 310 L280 340 L250 320 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <line x1="170" y1="255" x2="200" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="185" y1="250" x2="185" y2="280" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="250" y1="305" x2="280" y2="325" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="265" y1="330" x2="265" y2="300" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+
+
+                                                <path d="M470 290 L470 260 L500 245 L500 275 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                <path d="M470 370 L470 340 L500 325 L500 355 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <path d="M350 310 L380 295 L380 325 L350 340 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                <line x1="485" y1="252" x2="485" y2="282" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="470" y1="275" x2="500" y2="260" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="470" y1="355" x2="500" y2="340" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="485" y1="332" x2="485" y2="362" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="350" y1="325" x2="380" y2="310" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <line x1="365" y1="302" x2="365" y2="332" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                <path d="M470 200 L500 185 L500 85 L470 100 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <path d="M470 200 L440 185 L440 85 L470 100 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+                                                <path d="M470 100 L440 85 L470 70 L500 85 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+
+
+
+
+                                        </svg>
+
+                                        <div id="divtoptrans" style="margin-left:15px;">
+                                                <h3 style="color:#76671d;">Transformations</h3>
+                                                <div class="row">
+                                                        <text style="float:left">Translate :
+                                                                <input type="range" id="trans" min="100" max="400" value="100"
+                                                                        onchange="functrans(this.value, 'itrans', 'iso')">
+                                                        </text>
+                                                        <text style="float:right">Value :
+                                                                <input id="itrans" type="text" name="fname" value="100" disabled>
+                                                        </text>
+                                                        <br>
+                                                        <br>
+                                                </div>
+
+                                                <div class="row">
+                                                        <text style="float:left">Rotate :
+                                                                <input type="range" id="trans" min="0" max="360" value="0"
+                                                                        onchange="funcrot(this.value, 'irot', 'iso')">
+                                                        </text>
+                                                        <text style="float:right">Value :
+                                                                <input id="irot" type="text" name="fname" value="0 deg" disabled>
+                                                        </text>
+                                                        <br>
+                                                        <br>
+
+                                                </div>
+                                                <div class="row">
+                                                        <text style="float:left">Scale :
+                                                                <input type="range" id="trans" min="1" max="2" step='0.05'
+                                                                        value="1" onchange="funcscale(this.value, 'iscale', 'iso')">
+                                                        </text>
+                                                        <text style="float:right">Value :
+                                                                <input id="iscale" type="text" name="fname" value="1" disabled>
+                                                        </text>
+                                                        <br>
+                                                        <br>
+
+                                                </div>
+
+                                                <div class="row">
+
+                                                        <text style="float:left">Shear :
+                                                                <input type="range" id="trans" min="0" max="360" value="0"
+                                                                        onchange="funcshear(this.value, 'iskew', 'iso')">
+                                                        </text>
+                                                        <text style="float:right">Value :
+                                                                <input id="iskew" type="text" name="fname" value="0 deg"
+                                                                        disabled>
+                                                        </text>
+                                                        <br>
+
+                                                </div>
+
+                                        </div>
+
+
+                                </div>
+
+
+                        </div>
+
+                </div>
+
+                <div class="row">
+
+                        <h3>Experimenting with SVG Animations: (Still learning. Will try to include user control for speed and
+                                direction in the next week's submission)</h3>
+                        <p>The following animation demonstrates the transformation of objects</p>
+                        <svg width="300px" height="100px">
+                                <rect x="0" y="0" width="300" height="100" stroke="black" stroke-width="1" />
+                                <rect x="0" y="50" width="15" height="34" fill="blue" stroke="black" stroke-width="1">
+
+                                        <animateTransform attributeName="transform" begin="0s" dur="20s" type="rotate" from="0 60 60" to="360 100 60" repeatCount="indefinite"
+                                        />
+                                </rect>
+                        </svg>
+
+                        <p>The following animation demonstrates the Linear motion of objects</p>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="100px">
+                                <rect x="0" y="0" width="300" height="100" stroke="black" stroke-width="1" />
+                                <circle cx="0" cy="50" r="15" fill="blue" stroke="black" stroke-width="1">
+                                        <animateMotion path="M 0 0 H 300 Z" dur="3s" repeatCount="indefinite" />
+                                </circle>
+                        </svg>
+
+                        <p>The following animation demonstrates the Curved motion of objects</p>
+
+
+                        <svg width="300px" height="100px">
+                                <rect x="0" y="0" width="300" height="100" stroke="black" stroke-width="1" />
+                                <rect x="0" y="0" width="20" height="20" fill="blue" stroke="black" stroke-width="1">
+                                        <animateMotion path="M 250,80 H 50 Q 30,80 30,50 Q 30,20 50,20 H 250 Q 280,20,280,50 Q 280,80,250,80Z" dur="3s" repeatCount="indefinite"
+                                                rotate="auto">
+                                </rect>
+                        </svg>
+                </div>
+
+        </div>
+
+
+
+        <script src="app.js"></script>
+</body>
+
+</html>
