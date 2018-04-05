@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>CG1 Programming Assignment 4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+                body {
+                        margin: 0px;
+                        background-color: beige;
+                        overflow: scroll;
+                }
+        </style>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+        <div class="container-fluid navbar">
+                <h2>Final Project - Week 2</h2>
+                <label for="colorWell">Change Background Color:</label>
+                <input type="color" value="#f5f5dc" id="colorWell">
+                <div class="pull-right">
+                        <h4>-Narasimha Prasanth Chintarlapalli Reddy</h4>
+                        <h4>-Narasimha_Reddy@student.uml.edu</h4>
+                        <h4>- 01669930</h4>
+                </div>
+                <!-- <select>
+            <option value="house">House</option>
+            <option value="other">Other</option>
+        </select> -->
+        </div>
+
+        <!-- <div class="container"></div> -->
+        <div class="col-md-12">
+                <p>Click below for 3D transformations of the house</p>
+                <div class="row">
+                        <button class="btn" onclick="showdiv('housediv')"> 3D House View</button>
+                        <button class="btn" onclick="showdiv('frontdiv')"> Front View</button>
+
+                        <button class="btn" onclick="showdiv('sidediv')"> Side View</button>
+                        <button class="btn" onclick="showdiv('topdiv')"> Top View</button>
+                        <button class="btn" onclick="showdiv('cube3d')"> 3D Cube </button>
+
+                </div>
+
+
+                <div class="row" id="housediv">
+                        <div class="main">
+                                <div class="cont">
+                                        <div class="cube cube-front">
+                                                <h4>3D House Transformation</h4>
+
+                                                <svg id="iso" width="600" height="500">
+
+                                                        <path d="M300 500 L150 400 L150 200 L300 300 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                        <path d="M300 500 L550 400 L550 200 L300 300 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <path d="M300 300 L150 200 L250 150 L500 50 L550 200 Z" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <line x1="250" y1="150" x2="300" y2="300" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <path d="M250 466.66 L200 433.33 L200 366.66 L250 400 Z" style="fill:green;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <ellipse cx="315" cy="-10" rx="30" ry="20" fill="grey" style="stroke:black; stroke-width: 2 ;opacity:5" transform=" rotate(45)"
+                                                        />
+
+                                                        <path d="M200 290 L170 270 L170 240 L200 260 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                        <path d="M250 290 L280 310 L280 340 L250 320 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <line x1="170" y1="255" x2="200" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="185" y1="250" x2="185" y2="280" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="250" y1="305" x2="280" y2="325" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="265" y1="330" x2="265" y2="300" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+
+
+                                                        <path d="M470 290 L470 260 L500 245 L500 275 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                        <path d="M470 370 L470 340 L500 325 L500 355 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <path d="M350 310 L380 295 L380 325 L350 340 Z" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                        <line x1="485" y1="252" x2="485" y2="282" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="470" y1="275" x2="500" y2="260" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="470" y1="355" x2="500" y2="340" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="485" y1="332" x2="485" y2="362" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="350" y1="325" x2="380" y2="310" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <line x1="365" y1="302" x2="365" y2="332" style="stroke:black;stroke-width:3; opacity:0.5" />
+
+                                                        <path d="M470 200 L500 185 L500 85 L470 100 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <path d="M470 200 L440 185 L440 85 L470 100 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+                                                        <path d="M470 100 L440 85 L470 70 L500 85 Z" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+
+
+
+
+                                                </svg>
+                                        </div>
+                                </div>
+                        </div>
+
+
+
+
+
+                </div>
+
+                <div class="row" id="frontdiv">
+                        <div class="main">
+                                <div class="cont">
+                                        <div class="cube cube-front">
+                                                <h4>3D House Transformation - Front View</h4>
+                                                <svg id="front" width="600" height="500">
+
+
+                                                        Chimney
+                                                        <rect x="375" y="50" width="50" height="125" style="fill:blue;stroke:black;stroke-width:2;opacity:5" /> Roof
+                                                        <rect x="95" y="245" width="180" height="180" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" transform="rotate(-45 100 100)"
+                                                        /> House block
+                                                        <rect x="200" y="200" width="250" height="800" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Right window
+                                                        <rect x="375" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                        <line x1="375" y1="250" x2="425" y2="250" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                        <line x1="400" y1="225" x2="400" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" /> Left window
+                                                        <rect x="225" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                        <line x1="225" y1="250" x2="275" y2="250" style="stroke:black;stroke-width:3; opacity:0.5" />
+                                                        <line x1="250" y1="225" x2="250" y2="275" style="stroke:black;stroke-width:3 ;opacity:0.5" /> Attic window
+                                                        <circle cx="325" cy="150" r="20" fill="grey" style="stroke:black; stroke-width: 2 ;opacity:5" /> Door
+
+                                                        <rect x="300" y="400" width="50" height="100" style="fill:green;stroke:black;stroke-width:2;opacity:5" /> Door knob
+                                                        <circle cx="340" cy="450" r="5" fill="purple" stroke="black" stroke-width="1" />
+
+                                                </svg>
+
+                                        </div>
+                                </div>
+                        </div>
+
+
+
+
+
+                </div>
+
+
+                <div class="row" id="sidediv">
+                        <div class="main">
+                                <div class="cont">
+                                        <div class="cube cube-front">
+                                                <h4>3D House Transformation - Side View</h4>
+                                                <svg id="side" width="600" height="500">
+
+
+                                                        House block
+                                                        <rect x="150" y="200" width="400" height="800" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Roof
+                                                        <rect x="150" y="75" width="400" height="125" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" /> Chimney
+                                                        <rect x="400" y="50" width="50" height="125" style="fill:blue;stroke:black;stroke-width:2;opacity:1" /> Right-top window
+                                                        <rect x="400" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                        <line x1="400" y1="250" x2="450" y2="250" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                        <line x1="425" y1="225" x2="425" y2="275" style="stroke:black;stroke-width:3; opacity:0.5" /> Right-bottom window
+                                                        <rect x="400" y="350" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                        <line x1="400" y1="375" x2="450" y2="375" style="stroke:black;stroke-width:3;opacity:0.5" />
+                                                        <line x1="425" y1="350" x2="425" y2="400" style="stroke:black;stroke-width:3; opacity:0.5" /> Left window
+                                                        <rect x="250" y="225" width="50" height="50" style="fill:yellow;stroke:black;stroke-width:2;opacity:5" />
+                                                        <line x1="250" y1="250" x2="300" y2="250" style="stroke:black;stroke-width:3; opacity:0.5" />
+                                                        <line x1="275" y1="225" x2="275" y2="275" style="stroke:black;stroke-width:3 ;opacity:0.5" />
+
+
+                                                </svg>
+
+                                        </div>
+                                </div>
+                        </div>
+
+
+
+
+
+                </div>
+
+                <div class="row" id="topdiv">
+                        <div class="main">
+                                <div class="cont">
+                                        <div class="cube cube-front">
+                                                <h4>3D House Transformation - Top View</h4>
+                                                <svg id="top" width="600" height="500">
+
+
+
+                                                        Roof
+                                                        <rect x="200" y="100" width="250" height="870" style="fill:#726c9f;stroke:black;stroke-width:2;opacity:1" />
+
+                                                        <line x1="325" y1="100" x2="325" y2="500" style="stroke:black;stroke-width:3; opacity:0.5" /> Chimney
+
+                                                        <rect x="375" y="150" width="50" height="50" style="fill:blue;stroke:black;stroke-width:2;opacity:5" />
+
+
+                                                </svg>
+
+                                        </div>
+                                </div>
+                        </div>
+
+
+
+
+
+                </div>
+
+
+
+        </div>
+
+        <div class="col-md-12" id="cube3d">
+
+                <div class="row">
+                        <canvas id="game-surface" width="800" height="600"></canvas>
+                        <p>I have implemented this 3D cube object using WebGL. I learnt the basics of WebGL and implemented this 3D cube object. Next week, I will add texture to this cube and try to add shadows too.</p>
+                </div>
+
+
+        </div>
+
+        <div class="col-md-12" style="margin-top:500px" id="pview">
+
+                <!-- <div class="row"> -->
+                        <h3>Perspective projections of an Object Cube</h3>
+                        <div class="col-md-4">
+                                <h4>1 Point Projection</h4>
+                                <svg width="400" height="400" align="center" >
+
+                                        <polyline points="50,200 150,200 150,100 50,100 50,200" style="fill:rgb(255,64,0);stroke:black;stroke-width:2" />
+
+                                        <line x1="60" y1="190" x2="140" y2="190" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="140" y1="190" x2="140" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="140" y1="110" x2="60" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="60" y1="110" x2="60" y2="190" stroke-width="2" stroke="black" stroke-dasharray="3" />
+
+                                        <line x1="60" y1="190" x2="50" y2="200" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="140" y1="190" x2="150" y2="200" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="150" y1="100" x2="140" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3" />
+                                        <line x1="50" y1="100" x2="60" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3" />
+
+                                </svg>
+
+                        </div>
+                        <div class="col-md-4">
+                                <h4>2 Point Projection</h4>
+                                <svg width="400" height="400" align="center" >
+                                                <polyline points="100,200 100,100 30,105 30,195 100,200" style="fill:rgb(255,64,0);stroke:black;stroke-width:2" />
+                                                <polyline points="100,200 100,100 170,105 170,195 100,200" style="fill:rgb(0,255,191);stroke:black;stroke-width:2" />
+                                                </svg>
+                                                
+
+                        </div>
+                        <div class="col-md-4">
+                                <h4>3 Point Projection</h4>
+                                <svg width="400" height="400" align="center" s\>
+                                                <polyline points="100,300 90,200 181,157 182,243 100,300" style="fill:rgb(0,255,191);stroke:black;stroke-width:2" />
+                                                <polyline points="100,300 90,200 13,156 24,236 100,300" style="fill:rgb(255,64,0);stroke:black;stroke-width:2" />
+                                                <polyline points="90,200 13,156 105,114 181,157 90,200" style="fill:rgb(191,0,255);stroke:black;stroke-width:2" />
+                                                </svg>
+                                                
+
+                        </div>
+
+                <!-- </div> -->
+
+
+        </div>
+
+
+        <script src="gl-matrix.js"></script>
+
+        <script src="app.js"></script>
+</body>
+
+</html>

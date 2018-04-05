@@ -1,0 +1,5 @@
+After opening the week2.html through finalProject's home page, you can see an option to change the background color. You can play around with that feature.
+
+After that, we have few buttons like 3D house, front view, side view, top view and 3d cube object. You can click on one button at a time to see the respective 3d transformations. If you click on the same button twice, the respective svg disappears.
+
+Below that, we have perspective projections of an object cube.
