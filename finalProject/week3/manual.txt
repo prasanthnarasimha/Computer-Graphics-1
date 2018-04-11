@@ -1,0 +1,9 @@
+After opening this week's directory, you will find two options.
+    1. 3D Cube with texture
+    2. Light/Shadow demo
+
+I have used the UML logo as a texture for the 3D cube. I did all of this using ThreeJS. It has great documentaion which I used as reference.
+
+Click on 3D cube with texture to see a 3D cube with UML logo as texture. 
+
+Click on Light/Shadow demo to see how Light and shadow are implemented on a mesh with a geometric object.
