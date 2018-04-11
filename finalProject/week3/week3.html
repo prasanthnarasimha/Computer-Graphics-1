@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>CG1 Final Project Week 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="style1.css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+                body {
+                        margin: 0px;
+                        background-color: beige;
+                        overflow: scroll;
+                }
+        </style>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+	<body>
+
+		<div class="container-fluid navbar">
+				<h2>Final Project - Week 3</h2>
+				<label for="colorWell">Change Background Color:</label>
+				<input type="color" value="#f5f5dc" id="colorWell">
+				<div class="pull-right">
+						<h4>-Narasimha Prasanth Chintarlapalli Reddy</h4>
+						<h4>-Narasimha_Reddy@student.uml.edu</h4>
+						<h4>- 01669930</h4>
+				</div>
+		</div>
+
+		<div class="col-md-12">
+
+				<div class="row">
+                        <button class="btn" onclick="showdiv('cube')"> 3D Cube with Texture</button>
+                       <a href="light.html"> <button class="btn" onclick="showdiv('light')"> Light and Shadows</button></a>
+
+                </div>
+
+		<div id="cube">
+				<!-- <div >
+					<p>Change Speed in X:</p>
+					<input type="range" min="0" max="100" value="0.005" id="sliderX">
+
+					<p>Change speed in Y:</p>
+					<input type="range" min="0" max="1" value="0.01" id="sliderY" > 
+
+				</div> -->
+
+		</div>
+
+		<div id="light">
+			    <canvas id="myCanvas"></canvas>
+
+		</div>
+
+	</div>
+
+		<script src="three.min.js"></script>
+
+		<script src="app.js"></script>
+		<!-- <script src="app2.js"></script> -->
+
+	</body>
+</html>
