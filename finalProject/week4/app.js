@@ -305,6 +305,6 @@ document.onmousemove = handleMouseMove;
         var distance = - camera.position.z / dir.z;
 
         pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-
+ 
         
     }
