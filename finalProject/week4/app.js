@@ -45,6 +45,8 @@ var clock = new THREE.Clock();
 
 var textureLoader = new THREE.TextureLoader();
 
+var pos = {x:0, y:0, z:0};
+
 init();
 animate();
 
@@ -244,7 +246,9 @@ function render() {
     var time = Date.now() * 0.0005;
     var delta = clock.getDelta();
 
-    bulbLight.position.y = Math.cos( time ) * 0.25 + 1.25;
+    bulbLight.position.y = Math.cos( time ) * 0.75 + 1.25;
+
+    // bulbLight.position.set(pos.x, pos.y, pos.z);
 
     renderer.render( scene, camera );
 
@@ -260,3 +264,47 @@ function changetexture(name){
     	ballMat.needsUpdate = true;
     } );
 }
+
+
+
+document.onmousemove = handleMouseMove;
+    function handleMouseMove(event) {
+        var dot, eventDoc, doc, body, pageX, pageY;
+
+        event = event || window.event; // IE-ism
+
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX = event.clientX +
+              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+              (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+        }
+
+                // Use event.pageX / event.pageY here
+
+                var vector = new THREE.Vector3();
+
+        vector.set(
+            ( event.pageX / window.innerWidth ) * 2 - 1,
+            - ( event.pageY / window.innerHeight ) * 2 + 1,
+            0.5 );
+
+        vector.unproject( camera );
+
+        var dir = vector.sub( camera.position ).normalize();
+
+        var distance = - camera.position.z / dir.z;
+
+        pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
+
+        
+    }
