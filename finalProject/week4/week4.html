@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>CG1 Final Project Week 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <style>
+        body {
+            background-color: #000;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #info {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            color: #ffffff;
+            padding: 5px;
+            font-family: Monospace;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        a {
+            color: #ff0080;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0080ff;
+        }
+    </style>
+</head>
+
+<body>
+
+        <div class="container-fluid navbar">
+				<h2 style="color: #ffffff">Final Project - Week 3</h2>
+				<!-- <label for="colorWell">Change Background Color:</label>
+				<input type="color" value="#f5f5dc" id="colorWell"> -->
+				<div class="pull-right" style="color: #ffffff">
+						<h4>-Narasimha Prasanth Chintarlapalli Reddy</h4>
+						<h4>-Narasimha_Reddy@student.uml.edu</h4>
+						<h4>- 01669930</h4>
+				</div>
+		</div>
+
+    <div>
+
+        <button class="btn" onclick="changetexture('earth')">Change To Earth</button>
+        <button class="btn" onclick="changetexture('moon')">Change To Moon</button>
+
+    </div>
+
+    <div id="container"></div>
+
+
+
+    <!-- <div id="info">
+			<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - Physically accurate lighting example using a incandescent bulb - by <a href="http://clara.io" target="_blank" rel="noopener">Ben Houston</a><br />
+			Using real world scale: Brick cube is 1 meter in size.  Light is 2 meters from floor.  Globe is 25 cm in diameter.<br/>
+			Using Reinhard inline tonemapping with real-world light falloff (decay = 2).
+		</div> -->
+
+    <script src="three.min.js"></script>
+    <!-- <script src="js/libs/stats.min.js"></script>
+		<script src="js/libs/dat.gui.min.js"></script>-->
+    <script src="OrbitControls.js"></script>
+    <!-- <script src="js/Detector.js"></script>  -->
+
+    <script src="app.js"></script>
+</body>
+
+</html>
