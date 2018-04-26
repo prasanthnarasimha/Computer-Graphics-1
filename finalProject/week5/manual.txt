@@ -1,0 +1,3 @@
+- Left click and drag to look around the scene.
+- Right click anywhere to move the umass lowell cube to that location.
+- Use mouse wheen to zoom in and out to get a better view of the scene.

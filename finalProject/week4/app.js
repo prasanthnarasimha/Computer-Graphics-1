@@ -1,4 +1,3 @@
-// if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var camera, scene, renderer,
 bulbLight, bulbMat, hemiLight,
@@ -6,7 +5,6 @@ object, loader, stats;
 var ballMat, cubeMat, floorMat;
 
 
-// ref for lumens: http://www.power-sure.com/lumens.htm
 var bulbLuminousPowers = {
     "110000 lm (1000W)": 110000,
     "3500 lm (300W)": 3500,
@@ -18,7 +16,26 @@ var bulbLuminousPowers = {
     "Off": 0
 };
 
-// ref for solar irradiances: https://en.wikipedia.org/wiki/Lux
+
+
+
+
+
+
+var clock = new THREE.Clock();
+
+var textureLoader = new THREE.TextureLoader();
+
+
+
+
+
+
+
+
+
+
+
 var hemiLuminousIrradiances = {
     "0.0001 lx (Moonless Night)": 0.0001,
     "0.002 lx (Night Airglow)": 0.002,
@@ -36,14 +53,12 @@ var hemiLuminousIrradiances = {
 var params = {
     shadows: true,
     exposure: 0.88,
-    bulbPower: Object.keys( bulbLuminousPowers )[ 4 ],
+    bulbPower: Object.keys( bulbLuminousPowers )[ 3 ],
     hemiIrradiance: Object.keys( hemiLuminousIrradiances )[0]
 };
 
 
-var clock = new THREE.Clock();
 
-var textureLoader = new THREE.TextureLoader();
 
 var pos = {x:0, y:0, z:0};
 
@@ -243,10 +258,12 @@ function render() {
     bulbMat.emissiveIntensity = bulbLight.intensity / Math.pow( 0.02, 2.0 ); // convert from intensity to irradiance at bulb surface
 
     hemiLight.intensity = hemiLuminousIrradiances[ params.hemiIrradiance ];
-    var time = Date.now() * 0.0005;
+    var time = Date.now() * (0.0015 *2);
     var delta = clock.getDelta();
 
-    bulbLight.position.y = Math.cos( time ) * 0.75 + 1.25;
+    
+    // bulbLight.position.y = Math.cos( time ) * 0.75 + 1.25;
+bulbLight.position.x = Math.cos( time ) * 0.75 + 2.25;
 
     // bulbLight.position.set(pos.x, pos.y, pos.z);
 
