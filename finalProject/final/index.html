@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Final Project - Computer Graphics 1</title>
+  
+  
+  <style>
+    body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+  </style>
+
+  
+</head>
+
+<body>
+
+  <!-- Right click or double tap to move -->
+<!-- Hold down left click or touch and drag to turn camera -->
+<div class="row">
+<p id="ins"><strong>Instructions:</strong> Left click and drag to move around the scene. Right click anywhere to move the box to that location. You can also zoom in and out with mouse wheel for a better view. In this final submission, I added collision with trees. When you right click anywhere and if there is a tree on the way to that point, the cube stops moving. You can also see the floor much better than previous submission. You can also adjust the speed with which the cube travels. The range is set between 1 to 30</p>
+
+
+<label>Speed:  </label><button class="btn" id="btnd" onclick="changeSpeed('decrease')">-</button><label id="speed">5</label><button class="btn" id="btnd" onclick="changeSpeed('increase')">+</button>
+</div>
+
+
+  <script src='three.min.js'></script>
+<script src='OrbitControls.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="index.js"></script>
+
+
+
+
+</body>
+
+</html>

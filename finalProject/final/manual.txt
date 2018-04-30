@@ -1,0 +1,5 @@
+- Left click and drag to look around the scene.
+- Right click anywhere to move the umass lowell cube to that location.
+- Use mouse wheen to zoom in and out to get a better view of the scene.
+- Under the instructions, we have two buttons to increase and decrease the speed of the cube. Click on those buttons to increase or decrease the speed of the cube. The range is set from 0 to 30.
+Use the mouse wheel to zoom out and left click and drag to change the camera if at any point of time it becomes hard to track the cube.
